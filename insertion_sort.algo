@@ -1,0 +1,19 @@
+ PROCEDURE insertion_sort(arr)
+VAR
+    i, j, key,  : INTEGER 
+BEGIN
+    FOR i FROM 0 TO arr.length-1 STEP 1  DO
+    IF (arr[i]>arr[i+1]) THEN
+        swap(arr[i],arr[i+1])
+    END_IF
+    END_FOR
+    FOR i FROM 1 TO arr.length-1 STEP 1  DO
+        key = arr[i]
+        j = i-1
+    WHILE (j > 0 and arr[j] > key) DO
+        arr[j+1] = arr[j]
+         j = j-1
+        arr[j+1]= key
+    END_WHILE
+    END_FOR
+END
